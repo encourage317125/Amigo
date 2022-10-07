@@ -1,0 +1,11 @@
+---
+- name: reload redis
+  service: name=redis-server state=reloaded
+  become: yes
+  become_method: sudo
+      
+
+- name: restart redis
+  service: name=redis-server state=restarted
+  become: yes
+  become_method: sudo

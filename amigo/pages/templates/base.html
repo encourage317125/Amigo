@@ -1,0 +1,209 @@
+{% load app_filters %}
+{% load staticfiles i18n %}
+{% url 'pages:index' as home_url %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>{% block page_title %}Amigo{% endblock page_title %}</title>
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <link href="{% static 'css/themify-icons.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/amigo.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/flexslider.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!-- <link href="{% static 'css/lightbox.min.css' %}" rel="stylesheet" type="text/css" media="all" /> -->
+    <link href="{% static 'css/ytplayer.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700%7CRoboto:100,300,500%7CCrimson+Text:400' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="{% block page_classes %} {% endblock page_classes %}">
+    {% csrf_token %}
+    <div class="nav-container">
+        <nav class="{% block nav_classes %} {% endblock nav_classes %}">
+            <div class="nav-bar">
+                <div class="container">
+                    <div class="module left">
+                        <a href="{{ home_url }}">
+                            <img class="logo logo-light" alt="Foundry" src="{% static 'img/logo-light.png' %}">
+                            <img class="logo logo-dark" alt="Foundry" src="{% static 'img/logo-dark.png' %}">
+                        </a>
+                    </div>
+                    <div class="module widget-handle offscreen-toggle right visible-sm visible-xs">
+                        <i class="icon-mobile-menu">
+                            <span class="icon-wrap dfd-middle-line"></span>
+                            <span class="icon-wrap dfd-top-line"></span>
+                            <span class="icon-wrap dfd-bottom-line"></span>
+                        </i>
+                    </div>
+                    <div class="module right hidden-sm hidden-xs">
+                        <ul class="list-inline social-list">
+                            <li><a href="https://medium.com/@JoinAmigo" target="_blank"><i class="amigo-medium"></i></a></li>
+                            <li><a href="https://www.facebook.com/JoinAmigo" target="_blank"><i class="ti-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/joinamigo" target="_blank"><i class="ti-twitter-alt"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-bar-fluid hidden-sm hidden-xs">
+                        <div class="module">
+                            {% if request.get_full_path == home_url %}
+                            <ul class="menu">
+                                <li><a class="inner-link" href="#cover">Home</a></li>
+                                <li><a class="inner-link" href="#features_section">Features</a></li>
+                                <li><a class="inner-link" href="#benefits_section">Benefits</a></li>
+                                <li><a class="inner-link" href="#team_section">Team</a></li>
+                                <li><a class="inner-link" href="#contact_section">Contact</a></li>
+                            </ul>
+                            {% else %}
+                            <ul class="menu">
+                                <li><a href="{{ home_url }}#cover">Home</a></li>
+                                <li><a href="{{ home_url }}#features_section">Features</a></li>
+                                <li><a href="{{ home_url }}#benefits_section">Benefits</a></li>
+                                <li><a href="{{ home_url }}#team_section">Team</a></li>
+                                <li><a href="{{ home_url }}#contact_section">Contact</a></li>
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offscreen-container bg-dark">
+                <div class="close-nav">
+                    <a href="#">
+                        <i class="ti-close"></i>
+                    </a>
+                </div>
+                <div class="v-align-transform">
+                    <ul class="list-inline social-list mb-xs-48 visible-xs">
+                        <li><a href="https://medium.com/@JoinAmigo" target="_blank"><i class="amigo-medium"></i></a></li>
+                        <li><a href="https://www.facebook.com/JoinAmigo" target="_blank"><i class="ti-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/joinamigo" target="_blank"><i class="ti-twitter-alt"></i></a></li>
+                    </ul>
+                    <ul class="side-nav mb120 mb-xs-64">
+                        {% if request.get_full_path == home_url %}
+                        <li><a class="inner-link fade-on-hover" href="#cover"><h3>Home</h3></a></li>
+                        <li><a class="inner-link fade-on-hover" href="#features_section"><h3>Features</h3></a></li>
+                        <li><a class="inner-link fade-on-hover" href="#benefits_section"><h3>Benefits</h3></a></li>
+                        <li><a class="inner-link fade-on-hover" href="#team_section"><h3>Team</h3></a></li>
+                        <li><a class="inner-link fade-on-hover" href="#contact_section"><h3>Contact us</h3></a></li>
+                        {% else %}
+                        <li><a class="fade-on-hover" href="{{ home_url }}#cover"><h3>Home</h3></a></li>
+                        <li><a class="fade-on-hover" href="{{ home_url }}#features_section"><h3>Features</h3></a></li>
+                        <li><a class="fade-on-hover" href="{{ home_url }}#benefits_section"><h3>Benefits</h3></a></li>
+                        <li><a class="fade-on-hover" href="{{ home_url }}#team_section"><h3>Team</h3></a></li>
+                        <li><a class="fade-on-hover" href="{{ home_url }}#contact_section"><h3>Contact</h3></a></li>
+                        {% endif %}
+                    </ul>
+                    <div class="text-center hidden-xs">
+                        <a class="btn btn-white app-store-btn" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">AppStore</a>
+                        <a class="btn btn-white btn-modal google-play-btn" modal-link="android_notification">Google Play</a>
+                    </div>
+                    <div class="text-center visible-xs">
+                        <a class="btn-icon" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank"><i class="amigo-iphone"></i></a>
+                        <a class="btn-icon btn-modal" modal-link="android_notification"><i class="amigo-google-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--end of offscreen container-->
+        </nav>
+    </div>
+
+    <div class="main-container">
+
+        {% block content %}
+        {% endblock content %}
+
+        <footer class="bg-dark">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="mb64 mb-xs-48">
+                        <a href="#">
+                            <img alt="Logo" class="footer-logo" src="{% static 'img/logo-light.png' %}">
+                        </a>
+                    </div>
+                    <ul class="list-inline footer-nav mb72 mb-xs-40">
+                        {% if request.get_full_path == home_url %}
+                        <li><a class="inner-link" href="#cover">Home</a></li>
+                        <li><a class="inner-link" href="#features_section">Features</a></li>
+                        <li><a class="inner-link" href="#benefits_section">Benefits</a></li>
+                        <li><a class="inner-link" href="#team_section">Team</a></li>
+                        <li><a class="inner-link" href="#contact_section">Contact</a></li>
+                        {% else %}
+                        <li><a href="{{ home_url }}#cover">Home</a></li>
+                        <li><a href="{{ home_url }}#features_section">Features</a></li>
+                        <li><a href="{{ home_url }}#benefits_section">Benefits</a></li>
+                        <li><a href="{{ home_url }}#team_section">Team</a></li>
+                        <li><a href="{{ home_url }}#contact_section">Contact</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'pages:faq' %}">FAQ</a></li>
+                        <li><a href="{% url 'pages:terms' %}">Terms of Use</a></li>
+                    </ul>
+                    <ul class="list-inline social-list mb72 mb-xs-40">
+                        <li><a href="https://medium.com/@JoinAmigo" target="_blank"><i class="icon amigo-medium"></i></a></li>
+                        <li><a href="https://www.facebook.com/JoinAmigo" target="_blank"><i class="icon ti-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/joinamigo" target="_blank"><i class="icon ti-twitter-alt"></i></a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <span>© 2016 ONYDO INC.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    {% block modal %}
+        <div id="android_notification_modal" class="foundry_modal" modal-link="android_notification">
+            <div class="flipcard">
+                <div class="flipper">
+                    <div class="front-fb bg-dark text-center">
+                        <i class="ti-close close-modal"></i>
+                        <h4>Android Notifications</h4>
+                        <p>We'll reach you out when the
+                            <br>app is out</p>
+                        <div class="mt40">
+                            <form class="form-newsletter" success-callback="show_confirmation_popup()" data-error="Please fill all fields correctly." data-apierror="Something went wrong! Please contact support.">
+                                <div class="text-left">
+                                    <label>Your name</label>
+                                    <input type="text" name="name" class="validate-required signup-name-field" placeholder="Steve Howard" />
+                                </div>
+                                <div class="text-left mb32">
+                                    <label>Your e-mail</label>
+                                    <input type="text" name="email" class="validate-email validate-required  signup-email-field" placeholder="steve@gmail.com" />
+                                </div>
+                                <button type="submit" class="btn btn-filled">SUBSCRIBE</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="back-fb text-center">
+                        <i class="ti-close close-modal"></i>
+                        <h4>Success</h4>
+                        <p class="mt48 mb48"><i class="amigo-smile"></i></p>
+                        <p class="mb64">Great! We’ll notify
+                            <br> you when the Android version
+                            <br> is out.</p>
+                        <a class="btn btn-filled btn-white close-modal">DONE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock modal %}
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/flexslider.min.js' %}"></script>
+    <!-- <script src="{% static 'js/lightbox.min.js' %}"></script> -->
+    <!-- <script src="{% static 'js/masonry.min.js' %}"></script> -->
+    <!-- <script src="{% static 'js/twitterfetcher.min.js' %}"></script> -->
+    <!-- <script src="{% static 'js/spectragram.min.js' %}"></script> -->
+    <script src="{% static 'js/ytplayer.min.js' %}"></script>
+    <!-- <script src="{% static 'js/countdown.min.js' %}"></script> -->
+    <script src="{% static 'js/smooth-scroll.min.js' %}"></script>
+    <script src="{% static 'js/parallax.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

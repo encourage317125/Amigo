@@ -1,0 +1,6 @@
+---
+project_name: amigo
+project_repo_url: git@github.com:JoinAmigo/amigo-web.git
+project_repo_remote: origin
+domain_name: api.amigoapp.co
+repo_version: prod

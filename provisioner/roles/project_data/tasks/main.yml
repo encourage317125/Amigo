@@ -1,0 +1,35 @@
+---
+- name: Get the latest code
+  git: repo={{ project_repo_url }} dest={{ project_path }} version={{ repo_version }} accept_hostkey=true
+  tags: ['deploy']
+
+- name: Install django python dependencies
+  pip: requirements={{ project_path }}/{{ django_requirements_file }}
+  become: yes
+  become_method: sudo
+  tags: ['deploy']
+
+- name: Migrate database
+  django_manage: command=migrate app_path={{ project_path }}
+  tags: ['deploy']
+
+- name: Sync sample users
+  django_manage: command=sync_sample_user app_path={{ project_path }}
+  tags: ['deploy']
+
+- name: Run collect static
+  django_manage: command=collectstatic app_path={{ project_path }}
+  tags: ['deploy']
+
+- name: Load sample rsvp replies
+  django_manage: command=load_rsvp_replies app_path={{ project_path }}
+  tags: ['setup', 'deploy']
+
+- cron: name="send event reminders" minute="*/20" job="cd {{ project_path }}; python manage.py send_event_reminders"
+  tags: ['setup', 'cron']
+
+- name: Reload gunicorn
+  become: yes
+  become_method: sudo
+  shell: sudo supervisorctl restart gunicorn
+  tags: ['deploy']

@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #000;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+.btn {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: #000;
+    border-radius: 0;
+}
+
+.btn.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn.alt {
+    background: #fcc559;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+    text-decoration: none;
+}
+
+.container {
+    padding: 0 20px;
+}
+.card-container {
+    max-width: 360px;
+    margin: 20px auto;
+    padding: 20px 20px 0;
+    background: #ececec;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-container .username {
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+
+.card-container .card-title {
+    font-size: 34px;
+    margin: 0;
+    min-height: 90px;
+}
+
+.card-container .action-list {
+    border-top: 1px solid #000;
+    list-style: none;
+    padding: 0;
+}
+
+.card-container .action-list li {
+    border-bottom: 1px solid #d9d9d9;
+    height: 46px;
+}
+
+.card-container .action-list li a {
+    cursor: pointer;
+}
+
+.card-container .action-list li span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.card-container .action-list li a {
+    color: #000;
+    padding-right: 35px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+.card-container .action-list li a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 20px;
+    height: 26px;
+    padding: 0;
+    background: url('../img/next-icon.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.card-container .action-list li:last-child {
+    border-bottom: none;
+}
+
+.card-container .action-list li.open-download > * {
+    display: none;
+}
+.card-container .action-list li.open-download .open-download-modal.hide {
+    display: block !important;
+}
+
+.card-container .user-list {
+    position: relative;
+}
+
+.card-container .user-list .user-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 12px;
+    background-size: cover;
+    background-image: url('../img/photo-placeholder.png');
+}
+
+.card-container .user-list:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.card-container .bottom-actions {
+    position: relative;
+    margin: 20px -20px 0;
+}
+
+.card-container .bottom-actions .btn {
+    float: left;
+    width: 50%;
+}
+
+.card-container .bottom-actions .btn:not(.alt) {
+    background: #fff;
+}
+
+.card-container .bottom-actions .btn:before {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto 2px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.card-container .bottom-actions #btn-rsvp-yes:before {
+    background-image: url('../img/yes-smily.png');
+}
+
+.card-container .bottom-actions #btn-rsvp-no:before {
+    background-image: url('../img/no-smily.png');
+}
+
+.card-container .bottom-actions .btn:first-child {
+    border-right: 1px solid #ececec;
+}
+
+
+.modal-dialog {
+    margin: 30% auto 0 auto;
+    max-width: 400px;
+}
+.modal-dialog .modal-body {
+    padding: 30px 10px;
+    letter-spacing: 0.02em;
+    font-size: 15px;
+}
+.modal-dialog .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.modal-dialog .close .modal-close-btn {
+    margin:10px 10px 0 0
+}
+.modal-dialog.modal-primary .modal-content {
+    background: #fcc559;
+}
+
+.modal-dialog .modal-body h3 {
+    margin-top: 0;
+    font-size: 34px;
+}
+.modal-dialog .modal-body h5 {
+    margin-top: 0;
+    font-size: 20px;
+}
+.modal-dialog .yes-smily {
+    width: 92px;
+    height: 62px;
+    background-image: url('../img/yes-smily.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 0;
+    display: inline-block;
+}
+.modal-dialog .no-smily {
+    width: 92px;
+    height: 62px;
+    background-image: url('../img/no-smily.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.modal-dialog .download-app-container {
+    margin-top: 20px;
+}
+
+.ios-download-btn {
+    background: url('../img/app-store-btn.png') center no-repeat;
+    background-size: contain;
+    width: 125px;
+    height: 45px;
+    display: inline-block;
+}
+.android-download-btn {
+    background: url('../img/google-store-btn.png') center no-repeat;
+    background-size: contain;
+    width: 130px;
+    height: 45px;
+    display: inline-block;
+}
+
+#modal-android-subscription .mc_embed_signup {
+    margin-top: 1em;
+}
+#modal-android-subscription .mc-field-group {
+    padding-bottom: 5px;
+}
+#modal-android-subscription .mc-embedded-subscribe {
+    background: #726D64 !important;
+    border-color: #726D64;
+    color: #fff;
+}
+
+
+
+.footer {
+  text-align: center;
+  margin: 30px 0 20px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+.footer .amigo-logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 5px;
+}
+.footer .amigo-slogan {
+  color: #b0b0b0;
+  margin-bottom: 20px;
+}
+.footer .footer-links a {
+  color: #666;
+  display: inline-block;
+  margin-right: 15px;
+}
+.footer .footer-links a:last-child {
+  margin-right: 0;
+}
+.footer .app-links {
+    display: none;
+    margin: 30px 0px 10px;
+}
+.footer .app-links .ios-download-btn {
+    background: url('../img/app-store-btn.png') center no-repeat;
+    background-size: contain;
+    width: 125px;
+    height: 45px;
+    display: inline-block;
+    margin: 0 5px;
+}
+.footer .app-links .android-download-btn {
+    background: url('../img/google-store-btn.png') center no-repeat;
+    background-size: contain;
+    width: 130px;
+    height: 45px;
+    display: inline-block;
+    margin: 0 5px
+}
+
+
+@media screen and (min-width: 768px) {
+    .card-container .card-title {
+        min-height: 140px;
+    }
+    .modal-dialog {
+        margin-top: 150px;
+    }
+    .footer .app-links {
+        display: block;
+    }
+}
+@media screen and (max-width: 380px) {
+    .card-container .user-list .user-avatar {
+        width: 60px;
+        height: 60px;
+    }
+}

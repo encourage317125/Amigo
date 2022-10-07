@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+{% load staticfiles i18n %}
+
+{% block page_title %}
+    Amigo - Create events for you and your friends with Amigo.
+{% endblock page_title %}
+
+{% block nav_classes %}
+    absolute transparent
+{% endblock nav_classes %} 
+
+{% block content %}
+    <section class="cover fullscreen overlay parallax" id="cover">
+        <div class="background-image-holder">
+            <img alt="image" class="background-image" src="{% static 'img/home1.jpg' %}">
+        </div>
+        <div class="container v-align-transform">
+            <div class="row mt32 mb72 mb-xs-40">
+                <div class="col-sm-offset-1 col-sm-10 col-xs-12 text-center">
+                    <h1 class="mb32 mb-xs-16">Play more, plan less<br></h1>
+                    <p class="lead">
+                        Are your group texts so long they be seen from space? 
+                        <br>Join Amigo and see friends at the push of a button<br>
+                    </p>
+                </div>
+            </div>
+            <div class="row mb72 mb-xs-40">
+                <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 text-center">
+                    <form class="form-sms" data-success="App download link has been sent via SMS." data-error="Please fill your number correctly." data-apierror="Something went wrong! Please contact support.">
+                        <input type="text" name="number" class="validate-required validate-phone user-number-field" placeholder="What is your number" />
+                        <button type="submit" class="btn btn-filled">TEXT ME THE APP</button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center hidden-xs">
+                <a class="btn btn-white app-store-btn" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">AppStore</a>
+                <a class="btn btn-white btn-modal google-play-btn" modal-link="android_notification">Google Play</a>
+            </div>
+            <div class="text-center visible-xs">
+                <a class="btn-icon" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank"><i class="amigo-iphone"></i></a>
+                <a class="btn-icon btn-modal" modal-link="android_notification"><i class="amigo-google-play"></i></a>
+            </div>
+        </div>
+        <a class="scroll-down inner-link hidden-xs" href="#features_section"><i class="down-arrow"></i></a>
+    </section>
+
+    <section class="bg-secondary colorScroll" id="features_section" data-colors="236,236,236:252,197,89:188,133,201">
+        <div class="container">
+            <div class="row pb96 pb-xs-40">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb32 mb-xs-16">How does it work?<br></h3>
+                    <p class="lead">
+                        It shouldn't take 25 emails and texts to plan brunch, you know?
+                        <br>
+                    </p>
+                </div>
+            </div>
+            <div class="row v-align-children text-center mb-xs-40">
+                <div class="col-sm-6 text-center">
+                    <img alt="screen" src="{% static 'img/iphone-screen1.png' %}">
+                </div>
+                <div class="col-sm-6">
+                    <p class="mb64 mb-xs-32 h3">01.</p>
+                    <div class="mb80 mb-xs-24">
+                        <h4 class="mb16">Ping friends with 1 tap<br></h4>
+                        <p>Tap the Ping! button to see who of your <br>friends is down to meet up<br></p>
+                    </div>
+                    <div>
+                        <a class="btn btn-filled" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">See inside</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row v-align-children text-center mb-xs-40">
+                <div class="col-sm-6 text-center col-right">
+                    <img alt="screen" src="{% static 'img/iphone-screen2.png' %}">
+                </div>
+                <div class="col-sm-6">
+                    <p class="mb64 mb-xs-32 h3">02.</p>
+                    <div class="mb80 mb-xs-24">
+                        <h4 class="mb16">Everyone gets 1 text<br></h4>
+                        <p>That's it, there is no such thing as <br>reply all in our world<br></p>
+                    </div>
+                    <div>
+                        <a class="btn btn-filled" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">See inside</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row v-align-children text-center">
+                <div class="col-sm-6 text-center">
+                    <img alt="screen" src="{% static 'img/iphone-screen3.png' %}">
+                </div><div class="col-sm-6 mb-xs-24">
+                    <p class="mb64 mb-xs-32 h3">03.</p>
+                    <div class="mb80 mb-xs-24">
+                        <h4 class="mb16">1 click RSVP <br>from any smart phone<br></h4>
+                        <p>Choose a prewritten RSVP or quickly click <br>"I'm in!" or "Next time!"<br></p>
+                    </div>
+                    <div>
+                        <a class="btn btn-filled" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">See inside</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="benefits_section">
+        <div class="container">
+            <div class="row mb64 mb-xs-24">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb40 mb-xs-24">Your Social Life, Sorted</h3>
+                    <p class="lead">
+                        Get hours of your day back, but don't miss out on seeing your friends</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="local-video-container">
+                        <div class="background-image-holder">
+                            <img alt="Background Image" class="background-image" src="{% static 'img/video.jpg' %}">
+                        </div>
+                        <video controls="">
+                            <source src="{% static 'video/video.webm' %}" type="video/webm">
+                            <source src="{% static 'video/video.mp4' %}" type="video/mp4">
+                            <source src="{% static 'video/video.ogv' %}" type="video/ogg">
+                        </video>
+                        <div class="play-button dark"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt80 pt-xs-32">
+                <div class="text-center col-sm-3 pb-xs-40">
+                    <div class="feature">
+                        <i class="icon1 inline-block mb32"></i>
+                        <h5>Quick invite creation<br></h5>
+                        <p>Create casual invites for your <br>friends in seconds<br></p>
+                    </div>
+                </div>
+                <div class="text-center col-sm-3 pb-xs-40">
+                    <div class="feature">
+                        <i class="icon2 inline-block mb32"></i>
+                        <h5>Evening at a glance<br></h5>
+                        <p>Easily see your best options for <br>the night, rsvp with a tap or<br>personal message.<br></p>
+                    </div>
+                </div>
+                <div class="text-center col-sm-3 pb-xs-40">
+                    <div class="feature">
+                        <i class="icon3 inline-block mb32"></i>
+                        <h5>&lt;&lt;Who, What, Where&gt;&gt;<br></h5>
+                        <p>Find out who's been invited, who <br>is going and what they said - be <br>in the know<br></p>
+                    </div>
+                </div><div class="text-center col-sm-3">
+                    <div class="feature">
+                        <i class="icon4 inline-block mb32"></i>
+                        <h5>Easy RSVP<br></h5>
+                        <p>RSVP by tapping “I’m in” or “Next time!", <br>and personalize with one of our <br>suggested witty responses<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark" id="team_section">
+        <div class="container">
+            <div class="row mb64">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb40 mb-xs-24">Meet our Team<br></h3>
+                    <p class="lead">We love our friends and we love our phones, but likes aren't hugs. 
+                        <br>We believe we can leverage technology to allow us time for more human engagement, not less.<br></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="image-tile outer-title text-center">
+                        <img alt="Pic" src="{% static 'img/ashley.png' %}">
+                        <ul class="list-inline social-list">
+                            <li>
+                                <a href="https://twitter.com/ashley_jeanne" target="_blank">
+                                    <i class="ti-twitter-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/AshleyJeanneGranata?fref=ts" target="_blank">
+                                    <i class="ti-facebook"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="title">
+                            <h4>Ashley Granata<br></h4>
+                            <span>Founder &amp; General Manager</span>
+                        </div>
+                        <p class="description">
+                            Ashley Granata joined Amigo after exchanging 20+ emails with Eliza to get drinks after moving to SF. She has launched the Style.com iPhone application and was a cofounder of Fashism. She is passionate about helping people feel their best.
+                        </p>
+                        <a class="btn btn-filled" href="mailto:ashley@amigo.io" target="_top">Send email</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 pb-xs-32">
+                    <div class="image-tile outer-title text-center">
+                        <img alt="eliza" src="{% static 'img/eliza.png' %}">
+                        <ul class="list-inline social-list">
+                            <li>
+                                <a href="https://twitter.com/elizanguyen" target="_blank">
+                                    <i class="ti-twitter-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/elizanguyen111" target="_blank">
+                                    <i class="ti-facebook"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="title">
+                            <h4>Eliza Nguyen<br></h4>
+                            <span>Founder &amp; CEO</span>
+                        </div>
+                        <p class="description">
+                            Eliza created Amigo after her friends were constantly texting her while she was trying to work. Previously, she launched and saw everyone's favorite music app, Soundtracking, through to acquisition by Rhapsody. She is passionate about efficiency, technology, and happiness research.
+                        </p>
+                        <a class="btn btn-filled" href="mailto:eliza@amigo.io" target="_top">Send email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb40 mb-xs-24">Contact Us<br></h3>
+                    <p class="lead">We are eager to discuss your needs, and answer any questions you may have. 
+                        <br>Enter your details and we'll get back to you shortly.
+                        <br>
+                    </p>
+                </div>
+            </div>
+            <div class="row pt64 pt-xs-40">
+                <div class="col-sm-12 col-md-offset-2 col-md-8">
+                    <form class="form-email mb64 mb-xs-32" data-success="Thanks for your submission, we will be in touch shortly." data-error="Please fill all fields correctly." data-apierror="Something went wrong! Please contact support.">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <label>Your name</label>
+                                <input class="validate-required" name="name" placeholder="Steve Howard" type="text">
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label>Your e-mail</label>
+                                <input class="validate-required validate-email" name="email" placeholder="steve@gmail.com" type="text">
+                            </div>
+                        </div>
+                        <div>
+                            <label>Message</label>
+                            <textarea class="validate-required" name="message" rows="6"></textarea>
+                        </div>
+                        <div class="mt40 mt-xs-16 text-center">
+                            <button class="btn btn-filled" type="submit">Send Message</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center hidden-xs">
+                        <a class="btn btn-dark app-store-btn" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">AppStore</a>
+                        <a class="btn btn-dark btn-modal google-play-btn" modal-link="android_notification">Google Play</a>
+                    </div>
+                    <div class="text-center visible-xs">
+                        <a class="btn-icon" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank"><i class="amigo-iphone"></i></a>
+                        <a class="btn-icon btn-modal" modal-link="android_notification"><i class="amigo-google-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

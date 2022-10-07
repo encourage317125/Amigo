@@ -1,0 +1,79 @@
+language: python
+sudo: false
+python: '2.7'
+addons:
+  postgresql: '9.3'
+services:
+  - redis-server
+cache:
+  bundler: true
+  directories:
+    - $HOME/.cache/pip
+    - $HOME/.bundle
+before_install:
+# install travis gem to trigger dependent builds
+  - rvm list
+  - gem environment
+  - bundle --path=$HOME/.bundle
+# record dependent build numbers in build log, validate access token from settings
+  - bundle exec travis whatsup --pro --skip-completion-check -t $TRAVIS_ACCESS_TOKEN
+install:
+  - pip install pip --upgrade
+  - pip2.7 install -r requirements/common.txt
+  - pip2.7 install -r requirements/development.txt
+  - pip2.7 install ansible
+
+before_script:
+  - flake8
+  - export DATABASE_URL=postgres://postgres@localhost/amigo
+  - export DJANGO_SECRET=`openssl rand -base64 32`
+  - psql -c "CREATE DATABASE amigo;" -U postgres
+  - python manage.py migrate
+  - python manage.py create_sample_data --clean
+  - nohup python manage.py runserver 0<&- &> django_server.log &
+  - bash ./.travis/deploy-prod.sh
+  - sleep 3
+script:
+  - coverage run --source=amigo --omit='*tests*,*commands*,*migrations*,*admin*,*config*,*wsgi*'
+    -m py.test -v --tb=native
+  - coverage report
+  - cd provisioner; ansible-playbook -i hosts site.yml --syntax-check
+  - pwd
+  - cd ..
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+before_cache:
+  - rm $HOME/.cache/pip/log/debug.log
+
+deploy:
+  - provider: heroku
+    buildpack: python
+    strategy: git
+    api_key:
+      secure: NlR0HigMwnvRh2pKSHwh/D1JvMoUR1SUpVZL6F81tBbTX0hxelrNQ2vpcpT8pzIxkqoB9XDTmq+se1p7JfmixUZHuBy9C69o0a/BLqBpA3G9flF5sIz/GP0OUTTepbt7Q7kqzaft7J9w44ptktDs+pdHEWSrWhAp8EyS5YsyMDyTPi2ejNsU1q/Xqoz9R2qdJ21HL1OZ36tlwdYL/IEGTNh3JXb68qi5c0n9yrUzzUnOXlyZQKZUQAKQJFN5uB5ORASmrANJklVrLKytKpnDANHAqtyUsLsM0mvQaWq4mclJD4JsR5f4jJtipUSXFqifjZRGhZCLeLVs/1acZfL2bOXKWxeTxEV5yq5/rLpor8UzsEo6392eOEAIo3rtoayYA5N1d6xyIO80Tzwirhl1QeWr0EJzh4X0qWiEb8SyIdTst8hhGMRbDh3+iTpoJ3epWNH3DMjj/XZuD6LwqNmOktzU/Gbc76ed+u5eF8Nv26cx9fpIwe3eQ6WFFkWpwoyGGRN9vs36rD+2F0iKIuwHtTAUcUx5VIXxUfiJjqaIj/rfwWVK0V2wZTNgDKPWiFmk1QjAd0V8KirKkkRrDqYZsteiCW0vSAedxe4Xpt7uEZ9+/p15L/H6+0dazkXHKbyeQvWagvCDIeu/WMQWAKxGCddnPy4G6Urh6Yz5xaOv5+c=
+    app:
+      master: amigo-master
+      qa: amigo-qa
+      preprod: amigo-preprod
+    on:
+      repo: JoinAmigo/amigo-web
+    run: "python manage.py migrate && python manage.py sync_sample_user"
+    skip_cleanup: true
+
+  - provider: script
+    script: fab prod configure
+    on:
+      branch: prod
+    skip_cleanup: true
+
+after_deploy:
+  # trigger dependent builds
+  - bundle exec travis restart -r JoinAmigo/amigo-ios --pro --skip-completion-check -t $TRAVIS_ACCESS_TOKEN
+
+# whitelist
+branches:
+  only:
+    - master
+    - prod

@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "-> Deploy Dev"
+git checkout master
+git push
+echo "-> Deploy QA"
+git checkout qa
+git re -
+git push
+echo "-> Deploy Pre-Production"
+git checkout preprod
+git re -
+git push
+echo "-> Deploy Production"
+git checkout prod
+git re -
+git push
+fab prod deploy
+git checkout master

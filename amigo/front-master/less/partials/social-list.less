@@ -1,0 +1,51 @@
+.social-list {
+	li {
+		padding: 0 6px;
+		a {
+			opacity: 1;
+			color: #000;
+			i {
+				font-size: 14px;
+				width: 33px;
+				height: 33px;
+				line-height: 33px;
+				text-align: center;
+				background: transparent;
+				border: 1px solid #000;
+				border-radius: 50%;
+				display: inline-block;
+				box-sizing: content-box;
+				vertical-align: middle;
+				&.amigo-medium:before {
+					line-height: 35px;
+				}
+				&:hover, &:active, &:focus {
+					background-color: #000;
+					border-color: #000;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		a {
+			opacity: 1 !important;
+		}
+	}
+}
+
+.bg-dark {
+	.social-list li a {
+		color: #fff;
+		i {
+			background-color: transparent;
+			border-color: #fff;
+			&:hover, &:active, &:focus {
+				background-color: #fff;
+				border-color: #fff;
+				color: #000;
+			}
+		}
+	}
+}

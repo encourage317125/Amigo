@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load staticfiles i18n %}
+
+{% block page_title %}
+    Amigo - Knowledge Base
+{% endblock page_title %}
+
+{% block content %}
+    <section class="pb40">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb40 mb-xs-24">FAQ<br></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pt0">
+        <div class="container">
+            <div class="mb40">
+                <h3>What is Amigo?</h3>
+                <p>Amigo makes it easier to see your friends. You set up dinner, drinks, you name it  with one tap instead of a large amount emails and texts. We take 50 texts and reduce them to just 1 message.</p>
+            </div>
+            <div class="mb40">
+                <h3>How does it work?</h3>
+                <p>Magic! You connect your contacts to the app and then invite as many or as few as you like to outings.  After you tap just once to ping your friends to get together, then and ONLY THEN will the app send each invited amigo 1 notification to let them know you want to hang out.  They can RSVP easily via a link without having to create an Amigo account.  All of the RSVPs are kept in one spot so everyone has all critical information (Who, What, Where, When). It's that easy.</p>
+            </div>
+            <div class="mb40">
+                <h3>Are you going to spam me or my friends?</h3>
+                <p>Absolutely not!  We want you and your friends to get less text messages, not more. That’s why we made this nifty thing. You choose who you want to invite and we’ll invite ONLY those people to your event.  Amigo users will get a push notification, people without the app will get a text.</p>
+            </div>
+            <div>
+                <h3>Do my friends need to have the app?</h3>
+                <p>Nope, friends can see the invitation online and rsvp without registering.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary get-started-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb40 mb-xs-24">Let's get started<br></h3>
+                    <p class="lead">
+                        Amigo is the simplest way to meet up with friends. Invite them to a last minute<br>
+                        dinner, or accept a friend's invite to a show tomorrow.<br></p>
+                    <div class="mt96 mt-xs-48 text-center">
+                        <div class="hidden-xs">
+                            <a class="btn btn-dark app-store-btn" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">AppStore</a>
+                            <a class="btn btn-dark btn-modal google-play-btn" modal-link="android_notification">Google Play</a>
+                        </div>
+                        <div class="visible-xs">
+                            <a class="btn-icon" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank"><i class="amigo-iphone"></i></a>
+                            <a class="btn-icon btn-modal" modal-link="android_notification"><i class="amigo-google-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

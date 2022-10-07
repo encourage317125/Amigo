@@ -1,0 +1,6 @@
+[program:gunicorn]
+command = newrelic-admin run-program gunicorn -c {{ gunicorn_conf_path }}/gunicorn.conf.py wsgi:application
+directory = {{ project_path }}
+autostart=true
+autorestart=true
+environment=NEW_RELIC_CONFIG_FILE={{ gunicorn_conf_path }}/newrelic.inirelic.ini

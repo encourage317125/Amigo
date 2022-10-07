@@ -1,0 +1,40 @@
+.form-sms {
+	position: relative;
+	
+	@media screen and (min-width: 768px) {
+		input {
+			width: 100%;
+			float: none;
+			margin: 0;
+			padding-right: 160px;
+			border-radius: 100px;
+		}
+		button {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 150px;
+			border-radius: 0 100px 100px 0 !important;
+			box-shadow: none;
+			overflow: hidden;
+		}
+	}
+	@media screen and (max-width: 767px) {
+		input {
+			float: none;
+			width: 100%;
+			color: #fff;
+			background: transparent;
+			border: 1px solid #fff;
+			border-radius: 100px;
+			padding: 0 20px;
+			margin-bottom: 24px;
+			text-align: center;
+		}
+		button {
+			width: 100%;
+			float: none;
+			border-radius: 100px;
+		}
+	}
+}

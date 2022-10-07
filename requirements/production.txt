@@ -1,0 +1,18 @@
+# Pro-tip: Try not to put anything here. There should be no dependency in
+#   production that isn't in development.
+-r common.txt
+
+# S3 storage
+# -------------------------------------
+django-storages==1.1.8
+Collectfast==0.2.3
+boto==2.38.0
+
+# Web Server
+# -------------------------------------
+gevent==1.1.1
+gunicorn==19.3.0
+
+# Monitoring
+# -------------------------------------
+newrelic==2.50.0.39

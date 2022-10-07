@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load staticfiles i18n %}
+
+{% block page_title %}
+    Amigo - Terms of Use
+{% endblock page_title %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb40 mb-xs-24">Terms of Use<br></h3>
+                    <p class="mb40 mb-xs-24" style="color:#999">Date of Last Revision: July 19, 2016</p>
+                    <p>
+                        Welcome to Amigo! We provide our application, website ( <a href="https://www.amigo.io">www.amigo.io</a> ) and services (together, the "Platform") to you subject to the terms of service set forth in this Terms of Service Agreement (the "Agreement", or “Terms”). Please read these Terms carefully, and email us if you have any questions. By using or accessing Amigo, you agree to these Terms and our Privacy Policy, as updated from time to time.<br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pt0">
+        <div class="container">
+            <div class="mb40">
+                <h3>1. Privacy</h3>
+                <p>Your privacy is very important to us. We designed our Privacy Policy to make important disclosures about how you can use Amigo to meet with friends and how we collect and can use your content and information. We encourage you to read the Privacy Policy, and to use it to help you make informed decisions. <a href="{% url 'pages:privacy' %}">Read more</a></p>
+            </div>
+            <div class="mb40">
+                <h3>2. Who can use Amigo</h3>
+                <p>You may use our Products only if you can form a binding contract with Amigo, and only in compliance with these Terms and all applicable law. Registration data and certain other information about you are governed by our Privacy Policy. Any use or access by anyone under the age of 13 is prohibited. If you are under 18 years old, you may use the Service, only with the approval of your parent or guardian. Some of our Products may be software that is downloaded to your computer, phone, tablet, or other device. You agree that we may automatically upgrade those Products, and these Terms will apply to such upgrades.</p>
+            </div>
+            <div class="mb40">
+                <h3>3. Use License</h3>
+                <p>Subject to these Terms and our policies, we grant you a limited, non-exclusive, non-transferable, and revocable license to use our Products for personal, non-commercial use only. If you would like to use it for business please reach out to us at <a href="mailto:support@amigo.io" target="_top">support@amigo.io</a>. <a href="{% url 'pages:use_license' %}">Read more</a></p>
+            </div>
+            <div>
+                <h3>4. Questions? Feedback? Suggestions?</h3>
+                <p>If you have any questions regarding our policies and terms or the service please send an email to <a href="mailto:support@amigo.io" target="_top">support@amigo.io</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary get-started-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3 class="mb40 mb-xs-24">Let's get started<br></h3>
+                    <p class="lead">
+                        Amigo is the simplest way to meet up with friends. Invite them to a last minute<br>
+                        dinner, or accept a friend's invite to a show tomorrow.<br></p>
+                    <div class="mt96 mt-xs-48 text-center">
+                        <div class="hidden-xs">
+                            <a class="btn btn-dark app-store-btn" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank">AppStore</a>
+                            <a class="btn btn-dark btn-modal google-play-btn" modal-link="android_notification">Google Play</a>
+                        </div>
+                        <div class="visible-xs">
+                            <a class="btn-icon" href="https://itunes.apple.com/app/amigo/id1087152125" target="_blank"><i class="amigo-iphone"></i></a>
+                            <a class="btn-icon btn-modal" modal-link="android_notification"><i class="amigo-google-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

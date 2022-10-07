@@ -1,0 +1,40 @@
+-r common.txt
+
+# Documentation
+# -------------------------------------
+mkdocs==0.15.1
+isort==3.9.6
+# pygraphviz==1.2
+
+# Debugging
+# -------------------------------------
+ipython==3.1.0
+ipdb==0.8
+
+# Testing
+# -------------------------------------
+factory_boy==2.5.2
+flake8==2.4.1
+pytest-django==2.8.0
+pytest-flakes==0.2
+pytest-mock==0.7.0
+pytest-pythonpath==0.6
+pdbpp==0.8.3
+freezegun==0.3.4
+coverage==3.7.1
+selenium==2.53.1
+
+
+# Versioning
+# -------------------------------------
+bumpversion==0.5.3
+
+
+# Deployment
+# -------------------------------------
+ansible==2.0.0.2
+
+# Command line tools
+# -------------------------------------
+fabric==1.10.2
+honcho                    # managing Procfile-based applications. http://pypi.python.org/pypi/honcho

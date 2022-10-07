@@ -1,0 +1,99 @@
+# Latest Stable release of Django
+django>=1.8,<1.9
+
+# Extensions
+# -------------------------------------
+django-extensions==1.6.1
+django-environ==0.3.0
+Werkzeug==0.10.4
+pytz==2015.4
+arrow==0.7.0
+django-i18n-utils==1.5.3
+python-redis-lock[django]==3.0.0
+hiredis==0.2.0
+django-grappelli==2.7.3
+
+
+# Configuration
+# -------------------------------------
+django-debug-toolbar==1.3.0
+django-secure==1.0.1
+django-cache-url==0.8.0
+dj-database-url==0.3.0
+python-dotenv==0.3.0
+django-sites==0.8
+django-cors-headers==1.1.0
+django-configurations==1.0
+
+# Models
+# -------------------------------------
+django-model-utils==2.2
+django-phonenumber-field==0.7.2
+django-uuid-upload-path==1.0.0
+django-versatileimagefield==1.0.5
+django-jsonfield==0.9.13
+
+# Images
+# -------------------------------------
+Pillow==2.8.2
+
+# For the persistance stores
+# -------------------------------------
+psycopg2==2.6
+
+# Unicode slugification
+# -------------------------------------
+unicode-slugify==0.1.3
+django-autoslug==1.8.0
+
+# Django Rest Framework
+# -------------------------------------
+djangorestframework==3.1.2
+
+# Notifications
+# -------------------------------------
+django-twilio-sms-2==1.0.2
+django-zeropush==0.2.3
+
+# Analytics
+# -------------------------------------
+mixpanel==4.3.1
+mixpanel-py-async==0.1.0
+mock==1.0.1
+
+# Determine User's Browser
+# -------------------------------------
+user-agents==1.0.1
+
+# Timezone Detection
+# -------------------------------------
+django-tz-detect==0.2.5
+
+# UUID generator
+# -------------------------------------
+shortuuid==0.4.3
+
+# iCalendar
+# -------------------------------------
+icalendar==3.9.2
+
+# Facebook SDK
+# -------------------------------------
+facebook-sdk==1.0.0
+
+# airbreak
+# -------------------------------------
+-e git+https://github.com/airbrake/airbrake-django.git#egg=django-airbrake
+
+# UserVoice
+# -------------------------------------
+uservoice==0.0.22
+
+
+# Validate_Email
+# -------------------------------------
+validate_email==1.3
+
+
+# autolink
+autolink==0.1.2
